@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="js/medium-editor.min.js"></script>
+	<script src="js/autolist.min.js"></script>
+	<script src="js/json.min.js"></script>
+	<script src="js/handlebars.runtime.min.js"></script>
+	<script src="js/medium-editor-insert-plugin.min.js"></script>
+	<script src="js/jquery-sortable-min.js"></script>
+	<script src="js/jquery.ui.widget.js"></script>
+	<script src="js/jquery.iframe-transport.js"></script>
+	<script src="js/jquery.fileupload.js"></script>
+	<link href="css/font-awesome.css" rel="stylesheet">
+	<link rel="stylesheet" href="css/web.css">
+	<link rel="stylesheet" href="css/medium-editor.min.css">
+	<link rel="stylesheet" href="css/medium-editor-insert-plugin.min.css">
+	<link rel="stylesheet" href="css/themes/beagle.min.css">
+</head>
+<body>
+	<div id="container">
+		<h1>MediumEditor</h1>
+		<div class="editable">	
+		</div>
+	</div>
+
+<script>
+	var autolist = new AutoList();
+	var editor = new MediumEditor('.editable', {
+	    extensions: {
+	        'autolist': autolist
+	    }, 
+	    toolbar: {
+	        buttons: ['h1', 'h2', 'bold', 'italic', 'quote', 'unorderedlist','orderedlist']
+	    }
+	});
+</script>
+
+<script>
+	$(function () {
+	    $('.editable').mediumInsert({
+	        editor: editor
+	    });
+	});
+</script>
+
+</body>
+</html>
